@@ -6,7 +6,7 @@ COPY . .
 
 RUN go mod download
 
-RUN GOAMD64=v2 GCO_ENABLED=0 \
+RUN \
   go build -o /go/bin/opsd \
   -ldflags="-w -X main.version=${VERSION}" \
   -trimpath \
